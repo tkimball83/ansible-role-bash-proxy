@@ -1,0 +1,9 @@
+---
+bash_proxy_ftp: False
+bash_proxy_http: False
+bash_proxy_https: False
+bash_proxy_rsync: False
+bash_proxy_noproxy:
+  - 127.0.0.1
+  - localhost
+...
