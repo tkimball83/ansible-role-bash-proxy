@@ -41,7 +41,7 @@ HTTPS_PROXY_PROT="{{ bash_proxy_https_prot if bash_proxy_https_prot is defined e
 HTTPS_PROXY_USER="{{ bash_proxy_https_user if bash_proxy_https_user is defined else '' }}"
 HTTPS_PROXY_PASS="{{ bash_proxy_https_pass if bash_proxy_https_pass is defined else '' }}"
 HTTPS_PROXY_HOST="{{ bash_proxy_https_host if bash_proxy_https_host is defined else 'localhost' }}"
-HTTPS_PROXY_PORT="{{ bash_proxy_https_port if bash_proxy_https_port is defined else '8080' }}"
+HTTPS_PROXY_PORT="{{ bash_proxy_https_port if bash_proxy_https_port is defined else '8443' }}"
 
 if [ ! -z "${HTTPS_PROXY_USER}" ] && [ ! -z "${HTTPS_PROXY_PASS}" ]
 then
@@ -56,7 +56,7 @@ export https_proxy="${HTTPS_URL}"
 RSYNC_PROXY_USER="{{ bash_proxy_rsync_user if bash_proxy_rsync_user is defined else '' }}"
 RSYNC_PROXY_PASS="{{ bash_proxy_rsync_pass if bash_proxy_rsync_pass is defined else '' }}"
 RSYNC_PROXY_HOST="{{ bash_proxy_rsync_host if bash_proxy_rsync_host is defined else 'localhost' }}"
-RSYNC_PROXY_PORT="{{ bash_proxy_rsync_port if bash_proxy_rsync_port is defined else '8080' }}"
+RSYNC_PROXY_PORT="{{ bash_proxy_rsync_port if bash_proxy_rsync_port is defined else '1080' }}"
 
 if [ ! -z "${RSYNC_PROXY_USER}" ] && [ ! -z "${RSYNC_PROXY_PASS}" ]
 then
