@@ -1,5 +1,5 @@
 ---
-- name: Apply proxy settings to ~/.bash_proxy
+- name: Applying proxy settings to ~/.bash_proxy
   tags: bash-proxy
   template:
     src: bash_proxy.j2
