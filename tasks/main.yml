@@ -1,9 +1,9 @@
 ---
-- name: Applying proxy settings to ~/.bash_proxy
+- name: Applying proxy settings to ~/.bash_proxies
   tags: bash-proxy
   template:
     src: bash_proxy.j2
-    dest: "{{ ansible_env.HOME }}/.bash_proxy"
+    dest: "{{ ansible_env.HOME }}/.bash_proxies"
     owner: "{{ ansible_user_uid }}"
     group: "{{ ansible_user_gid }}"
     mode: 0644
