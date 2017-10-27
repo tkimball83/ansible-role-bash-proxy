@@ -12,13 +12,17 @@ None
 
 Available variables are listed below, along with default values:
 
+    bash_proxy_dest: "{{ ansible_env.HOME }}/.bash_proxies"
     bash_proxy_ftp: False
+    bash_proxy_group: "{{ ansible_user_gid }}"
     bash_proxy_http: False
     bash_proxy_https: False
-    bash_proxy_rsync: False
+    bash_proxy_mode: 0600
     bash_proxy_noproxy:
       - 127.0.0.1
       - localhost
+    bash_proxy_owner: "{{ ansible_user_uid }}"
+    bash_proxy_rsync: False
 
 Additional variables not defined by default:
 

@@ -3,8 +3,8 @@
   tags: bash-proxy
   template:
     src: bash_proxy.j2
-    dest: "{{ ansible_env.HOME }}/.bash_proxies"
-    owner: "{{ ansible_user_uid }}"
-    group: "{{ ansible_user_gid }}"
-    mode: 0644
+    dest: "{{ bash_proxy_dest }}"
+    owner: "{{ bash_proxy_owner }}"
+    group: "{{ bash_proxy_group }}"
+    mode: "{{ bash_proxy_mode }}"
 ...
