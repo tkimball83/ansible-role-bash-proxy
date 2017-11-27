@@ -2,7 +2,7 @@
 - name: Applying proxy settings to {{ bash_proxy_dest }}
   tags: bash-proxy
   template:
-    src: bash_proxy.j2
+    src: bash_proxies.j2
     dest: "{{ bash_proxy_dest }}"
     owner: "{{ bash_proxy_owner }}"
     group: "{{ bash_proxy_group }}"
