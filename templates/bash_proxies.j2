@@ -1,10 +1,10 @@
 # .bash_proxies
 
-{% if bash_proxy_noproxy is defined %}
+{% if bash_proxy_noproxy|length > 0 %}
 export no_proxy={{ bash_proxy_noproxy|join(',') }}
 
 {% endif %}
-{% if bash_proxy_ftp is defined and bash_proxy_ftp %}
+{% if bash_proxy_ftp|bool %}
 FTP_PROXY_PROT="{{ bash_proxy_ftp_prot if bash_proxy_ftp_prot is defined else 'http' }}"
 FTP_PROXY_USER="{{ bash_proxy_ftp_user if bash_proxy_ftp_user is defined else '' }}"
 FTP_PROXY_PASS="{{ bash_proxy_ftp_pass if bash_proxy_ftp_pass is defined else '' }}"
@@ -20,7 +20,7 @@ FTP_URL="${FTP_PROXY_PROT}://${FTP_PROXY_CRED}${FTP_PROXY_HOST}:${FTP_PROXY_PORT
 export ftp_proxy="${FTP_URL}"
 
 {% endif %}
-{% if bash_proxy_http is defined and bash_proxy_http %}
+{% if bash_proxy_http|bool %}
 HTTP_PROXY_PROT="{{ bash_proxy_http_prot if bash_proxy_http_prot is defined else 'http' }}"
 HTTP_PROXY_USER="{{ bash_proxy_http_user if bash_proxy_http_user is defined else '' }}"
 HTTP_PROXY_PASS="{{ bash_proxy_http_pass if bash_proxy_http_pass is defined else '' }}"
@@ -36,12 +36,12 @@ HTTP_URL="${HTTP_PROXY_PROT}://${HTTP_PROXY_CRED}${HTTP_PROXY_HOST}:${HTTP_PROXY
 export http_proxy="${HTTP_URL}"
 
 {% endif %}
-{% if bash_proxy_https is defined and bash_proxy_https %}
+{% if bash_proxy_https|bool %}
 HTTPS_PROXY_PROT="{{ bash_proxy_https_prot if bash_proxy_https_prot is defined else 'http' }}"
 HTTPS_PROXY_USER="{{ bash_proxy_https_user if bash_proxy_https_user is defined else '' }}"
 HTTPS_PROXY_PASS="{{ bash_proxy_https_pass if bash_proxy_https_pass is defined else '' }}"
 HTTPS_PROXY_HOST="{{ bash_proxy_https_host if bash_proxy_https_host is defined else 'localhost' }}"
-HTTPS_PROXY_PORT="{{ bash_proxy_https_port if bash_proxy_https_port is defined else '8443' }}"
+HTTPS_PROXY_PORT="{{ bash_proxy_https_port if bash_proxy_https_port is defined else '8080' }}"
 
 if [ ! -z "${HTTPS_PROXY_USER}" ] && [ ! -z "${HTTPS_PROXY_PASS}" ]
 then
@@ -52,7 +52,7 @@ HTTPS_URL="${HTTPS_PROXY_PROT}://${HTTPS_PROXY_CRED}${HTTPS_PROXY_HOST}:${HTTPS_
 export https_proxy="${HTTPS_URL}"
 
 {% endif %}
-{% if bash_proxy_rsync is defined and bash_proxy_rsync %}
+{% if bash_proxy_rsync|bool %}
 RSYNC_PROXY_USER="{{ bash_proxy_rsync_user if bash_proxy_rsync_user is defined else '' }}"
 RSYNC_PROXY_PASS="{{ bash_proxy_rsync_pass if bash_proxy_rsync_pass is defined else '' }}"
 RSYNC_PROXY_HOST="{{ bash_proxy_rsync_host if bash_proxy_rsync_host is defined else 'localhost' }}"

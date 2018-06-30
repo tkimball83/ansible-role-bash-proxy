@@ -1,6 +1,8 @@
 # ansible-role-bash-proxy
 
 [![Build Status](https://travis-ci.org/tkimball83/ansible-role-bash-proxy.svg?branch=master)](https://travis-ci.org/tkimball83/ansible-role-bash-proxy)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-bash--proxy-blue.svg?style=flat)](https://galaxy.ansible.com/tkimball83/bash-proxy)
+[![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](COPYING)
 
 macOS - Configure proxies via command line
 
@@ -14,14 +16,14 @@ Available variables are listed below, along with default values:
 
     bash_proxy_dest: "{{ ansible_env.HOME }}/.bash_proxies"
     bash_proxy_ftp: false
-    bash_proxy_group: "{{ ansible_user_gid }}"
+    bash_proxy_group: "{{ ansible_real_groupd_id }}"
     bash_proxy_http: false
     bash_proxy_https: false
     bash_proxy_mode: 0600
     bash_proxy_noproxy:
       - 127.0.0.1
       - localhost
-    bash_proxy_owner: "{{ ansible_user_uid }}"
+    bash_proxy_owner: "{{ ansible_real_user_id }}"
     bash_proxy_rsync: false
 
 Additional variables not defined by default:
@@ -39,7 +41,7 @@ Additional variables not defined by default:
     bash_proxy_https_host: localhost
     bash_proxy_https_pass: password
     bash_proxy_https_prot: https
-    bash_proxy_https_port: 8443
+    bash_proxy_https_port: 8080
     bash_proxy_https_user: username
     bash_proxy_rsync_host: localhost
     bash_proxy_rsync_pass: password
@@ -70,8 +72,17 @@ None
 
 ## License
 
-GPLv3
+Copyright (C) 2018 Taylor Kimball <tkimball@linuxhq.org>
 
-## Author Information
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-This role was created by [Taylor Kimball](http://www.linuxhq.org).
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
