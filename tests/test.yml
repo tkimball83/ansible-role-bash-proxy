@@ -2,5 +2,5 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-role-bash-proxy
+    - ansible-role-bash_proxy
 ...

@@ -1,7 +1,7 @@
-# ansible-role-bash-proxy
+# ansible-role-bash_proxy
 
-[![Build Status](https://travis-ci.org/tkimball83/ansible-role-bash-proxy.svg?branch=master)](https://travis-ci.org/tkimball83/ansible-role-bash-proxy)
-[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-bash--proxy-blue.svg?style=flat)](https://galaxy.ansible.com/tkimball83/bash-proxy)
+[![Build Status](https://travis-ci.org/tkimball83/ansible-role-bash_proxy.svg?branch=master)](https://travis-ci.org/tkimball83/ansible-role-bash_proxy)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-bash_proxy-blue.svg?style=flat)](https://galaxy.ansible.com/tkimball83/bash_proxy)
 [![License](https://img.shields.io/badge/license-GPLv3-brightgreen.svg?style=flat)](COPYING)
 
 macOS - Configure proxies via command line
@@ -56,7 +56,7 @@ None
 
     - hosts: servers
       roles:
-        - role: tkimball83.bash-proxy
+        - role: tkimball83.bash_proxy
           bash_proxy_http: true
           bash_proxy_http_host: central.usa.torguardvpnaccess.com
           bash_proxy_http_pass: qRUPfS939oV4

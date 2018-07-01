@@ -1,6 +1,6 @@
 ---
 - name: Attempting to overlay proxy settings to {{ bash_proxy_dest }}
-  tags: bash-proxy
+  tags: bash_proxy
   template:
     src: bash_proxies.j2
     dest: "{{ bash_proxy_dest }}"
