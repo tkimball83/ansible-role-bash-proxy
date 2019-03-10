@@ -54,7 +54,8 @@ None
 
 ## Example Playbook
 
-    - hosts: servers
+    - hosts: localhost
+      connection: local
       roles:
         - role: tkimball83.bash_proxy
           bash_proxy_http: true
